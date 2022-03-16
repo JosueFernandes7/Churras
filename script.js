@@ -4,26 +4,31 @@ let inputDuracao = document.getElementById("duracao");
 
 let resultado = document.getElementById("resultado");
 
-let adultos = inputAdultos.value
-let criancas = inputCriancas.value
-let duracao = inputDuracao.value
-
 let calc = document.getElementById("calc");
 
 calc.addEventListener("click",exc);
 
+// essa é a func do click
 function exc(){
-    if(adultos >=0 && criancas >=0 && duracao >=0){
 
-            let meat = carne(duracao);
-            let drink = bebida(duracao);
-            
-            let qtdCarne = meat*adultos + meat/2*criancas;
-            let qtdBebida = drink*adultos + drink/2*criancas;
+            let adultos = inputAdultos.value
+            let criancas = inputCriancas.value
+            let duracao = inputDuracao.value
+            if(adultos >=0 && criancas >=0 && duracao >0){
+                let meat = carne(duracao);
+                let drink = bebida(duracao);
+                
+                let qtdCarne = meat*adultos + meat/2*criancas;
+                let qtdBebida = drink*adultos + drink/2*criancas;
+    
+                
+                resultado.innerHTML= `<p>${qtdCarne} Kg de Carne</p>`;
+                resultado.innerHTML+= `<p>${qtdBebida} L de Refrigerante/Água</p>`;
 
-            
-            resultado.innerHTML= `<p>${qtdCarne/1000} Kg de Carne</p>`;
-            resultado.innerHTML+= `<p>${qtdBebida/1000} L de Refrigerante/Água</p>`;
+            }
+            else{
+                resultado.innerHTML=`<p>Valores Inválidos</p>`
+            }
         
             function carne(duracao){
                 if(duracao >= 6){
@@ -42,8 +47,6 @@ function exc(){
                 }
             }// ao clickar no botao
         }
-    else{
-        resultado.innerHTML="<p>Valores Invalidos</p>"
-    } 
-}
+   
+
 
