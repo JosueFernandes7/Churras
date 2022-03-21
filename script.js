@@ -22,8 +22,8 @@ function exc(){
                 let qtdBebida = drink*adultos + drink/2*criancas;
     
                 
-                resultado.innerHTML= `<p>${qtdCarne} Kg de Carne</p>`;
-                resultado.innerHTML+= `<p>${qtdBebida} L de Refrigerante/Água</p>`;
+                resultado.innerHTML= `<p>${qtdCarne/1000} Kg de Carne</p>`;
+                resultado.innerHTML+= `<p>${qtdBebida/1000} L de Refrigerante/Água</p>`;
 
             }
             else{
